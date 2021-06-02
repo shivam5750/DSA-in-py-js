@@ -37,9 +37,11 @@ class MyArray():
   
   def shiftItems2(self, index, newItem):
     length = self.length
+    holding = self.data[index]
     for i in range(index, length):
-       self.data[length] = self.data[length-1]
-       length-=1
+      nextdata = self.data[i+1]
+       self.data[i+1] = holding
+       holding = nextdata
     self.data[index] = newItem
     self.length +=1
 
